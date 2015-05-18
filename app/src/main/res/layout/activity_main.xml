@@ -1,0 +1,137 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:paddingLeft="@dimen/activity_horizontal_margin"
+              android:paddingRight="@dimen/activity_horizontal_margin"
+              android:paddingTop="@dimen/activity_vertical_margin"
+              android:paddingBottom="@dimen/activity_vertical_margin"
+              tools:context=".MainActivity"
+              android:orientation="vertical"
+              android:animateLayoutChanges="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <TextClock
+            android:id="@+id/clock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textSize="80sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/clock"
+            style="?android:attr/buttonBarStyle">
+
+            <Button
+                android:id="@+id/new_dance_button"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/new_dance"
+                android:textSize="25sp"
+                style="?android:attr/buttonBarButtonStyle"
+                android:onClick="newDance"/>
+
+            <Spinner
+                android:id="@+id/dance_type"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+            </Spinner>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/stopwatch_pane"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="top"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/dance_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/no_dance"
+            android:textSize="25sp"/>
+
+        <Chronometer
+            android:id="@+id/stopwatch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dance_label"
+            android:layout_centerHorizontal="true"
+            android:textSize="80sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/stopwatch"
+            style="?android:attr/buttonBarStyle">
+
+            <Button
+                android:id="@+id/start_dance"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/start_dance"
+                android:textSize="25sp"
+                style="?android:attr/buttonBarButtonStyle"
+                android:onClick="startDance"/>
+
+            <Button
+                android:id="@+id/cancel_dance"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/cancel"
+                android:textSize="25sp"
+                style="?android:attr/buttonBarButtonStyle"
+                android:onClick="endDance"/>
+
+            <Button
+                android:id="@+id/end_dance"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/end_dance"
+                android:textSize="25sp"
+                style="?android:attr/buttonBarButtonStyle"
+                android:onClick="endDance"
+                android:visibility="gone"/>
+
+            <Button
+                android:id="@+id/pause"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/pause"
+                android:textSize="25sp"
+                style="?android:attr/buttonBarButtonStyle"
+                android:onClick="pause"
+                android:visibility="gone"/>
+
+            <Button
+                android:id="@+id/resume"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/resume"
+                android:textSize="25sp"
+                style="?android:attr/buttonBarButtonStyle"
+                android:onClick="resume"
+                android:visibility="gone"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>
